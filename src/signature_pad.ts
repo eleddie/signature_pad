@@ -623,9 +623,8 @@ export default class SignaturePad extends SignatureEventTarget {
     }
   }
 
-  public toSVG({ includeBackgroundColor = false, ratio }: ToSVGOptions = {}): string {
+  public toSVG({ includeBackgroundColor = false, ratio = Math.max(window.devicePixelRatio || 1, 1) }: ToSVGOptions = {}): string {
     const pointGroups = this._data;
-    const ratio = ratio ?? Math.max(window.devicePixelRatio || 1, 1);
     const minX = 0;
     const minY = 0;
     const maxX = this.canvas.width / ratio;
