@@ -52,10 +52,12 @@ signaturePad.toDataURL(); // save image as PNG
 signaturePad.toDataURL("image/jpeg"); // save image as JPEG
 signaturePad.toDataURL("image/jpeg", 0.5); // save image as JPEG with 0.5 image quality
 signaturePad.toDataURL("image/svg+xml"); // save image as SVG data url
+signaturePad.toDataURL("image/svg+xml", {ratio: 1}); // save image as SVG data url and pass the canvas ratio if needed
 
 // Return svg string without converting to base64
 signaturePad.toSVG(); // "<svg...</svg>"
 signaturePad.toSVG({includeBackgroundColor: true}); // add background color to svg output
+signaturePad.toSVG({ratio: 1}); // pass the ratio if needed
 
 // Draws signature image from data URL (mostly uses https://mdn.io/drawImage under-the-hood)
 // NOTE: This method does not populate internal data structure that represents drawn signature. Thus, after using #fromDataURL, #toData won't work properly.
